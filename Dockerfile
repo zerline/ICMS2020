@@ -22,4 +22,3 @@ WORKDIR ${HOME}/francy-widget
 RUN sage -pip install .
 RUN sage -python3 /home/sage/sage/local/bin/jupyter-nbextension enable --py --sys-prefix jupyter_francy
 WORKDIR ${HOME}
-#ENTRYPOINT /usr/bin/sage -n jupyter
