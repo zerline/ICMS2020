@@ -14,6 +14,10 @@ RUN git clone -b develop https://github.com/sagemath/sage-combinat-widgets.git s
 RUN git clone -b develop https://github.com/sagemath/sage-explorer.git sage-explorer
 RUN git clone -b develop https://github.com/zerline/francy-widget.git francy-widget
 COPY --chown=sage:sage *.ipynb ${HOME}/
+COPY --chown=sage:sage *.png ${HOME}/
+COPY --chown=sage:sage *.json ${HOME}/
+RUN mkdir ${HOME}/WomenMathGenealogy
+COPY WomenMathGenealogy/* ${HOME}/WomenMathGenealogy/
 WORKDIR ${HOME}/sage-combinat-widgets
 RUN sage -pip install .
 WORKDIR ${HOME}/sage-explorer
